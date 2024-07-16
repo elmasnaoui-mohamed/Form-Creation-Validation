@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('registration-form');
     const feedbackDiv = document.getElementById('form-feedback');
 
-    const validateForm = (event) => {
-        event.preventDefault();
+    function validateForm(e){
+        e.preventDefault();
 
         // Retrieve and trim input values
         const username = document.getElementById('username').value.trim();
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
             feedbackDiv.innerHTML = messages.join('<br>');
             feedbackDiv.style.color = '#dc3545';
         }
-    };
+     }
 
-    form.addEventListener('submit', validateForm);
+    form.addEventListener('submit', validateForm());
 });
